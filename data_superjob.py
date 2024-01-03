@@ -2,7 +2,7 @@ import requests
 import json
 import os
 
-from get_api_abstract import GetVacanciesByAPI
+from abstract import GetVacanciesByAPI
 from data_json import VacanciesInFileJson
 from get_vacansions import GetVacancies
 
