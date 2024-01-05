@@ -1,7 +1,7 @@
-from hh_vac_getter import HHApiEngine, hh_vac_info_validation, hh_data_formatting
-from sj_vac_getter import SJApiEngine, sj_vac_info_validation, sj_data_formatting
-from json_manager import JsonOperator
-from user_interface import UserInterface
+from get_hh_vacansions import HHApiEngine, hh_vac_info_validation, hh_data_formatting
+from get_sj_vacansions import SJApiEngine, sj_vac_info_validation, sj_data_formatting
+from data_json import JsonOperator
+from user import UserInterface
 
 if __name__ == "__main__":
     print(f"Привет! Я программа для сбора информации о вакансиях! Приступим!\n")

@@ -1,5 +1,5 @@
 from vacansions import Vacancy
-from json_manager import JsonOperator
+from data_json import JsonOperator
 
 
 class UserInterface:
