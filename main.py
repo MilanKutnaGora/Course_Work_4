@@ -4,11 +4,11 @@ from data_json import JsonOperator
 from user import UserInterface
 
 if __name__ == "__main__":
-    print(f"Привет! Я программа для сбора информации о вакансиях! Приступим!\n")
+    print(f"Здравствуйте, давайте определимся с платформой и необходимой вакансией\n")
     while True:
-        platform_input = input(f"Выбери платформу:\n1 - HeadHunter\n2 - SuperJob\n0 - Выйти\n> ")
+        platform_input = input(f"Выберите одну из платформ:\n1 - HeadHunter\n2 - SuperJob\n0 - Выйти\n> ")
         if platform_input not in ["0", "1", "2"]:
-            print(f"Упс. Кажется в моей базе нет такой платформы. Попробуй еще раз!")
+            print(f"Пожалуйста повнимательнее. Попробуйте еще раз!")
             print()
         else:
             platform = {
@@ -16,18 +16,15 @@ if __name__ == "__main__":
                 "2": "SuperJob"
             }
             if platform_input == "0":
-                print("Всего хорошего!")
+                print("До следующего раза!")
                 break
             else:
-                print(f"Отлично! Ты выбрал платформу {platform[platform_input]}\n")
-                city_name_input = input(f"Для начала узнаем в каком "
-                                        f"городе необходимо найти вакансии, "
-                                        f"например, Санкт-Петербург или Казань:\n"
-                                        f"(Только вводи существующий город, иначе получишь "
-                                        f"кулебяку)"
+                print(f"Отлично! Вы выбрали платформу {platform[platform_input]}\n")
+                city_name_input = input(f"Введите название города, в котором необходимо найти вакансии\n"
+                                        f"(Внимательно вводите название города, без ошибок!!!)"
                                         f"\n> ").capitalize()
-                prof_input = input(f"А теперь мне необходимо узнать название профессии, например "
-                                   f"Python разработчик или Визажист:\n> ").capitalize()
+                prof_input = input(f"Введите пожалуйста название профессии"
+                                   f"\n> ").capitalize()
                 if platform_input == "1":
                     hh_block = HHApiEngine(city_name_input, prof_input)
                     vac_source = hh_block.get_vacancies()  # Получение вакансий с HeadHunter

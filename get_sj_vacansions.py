@@ -35,7 +35,7 @@ class SJApiEngine(ApiEngine):
 
 def sj_vac_info_validation(sj_vac_source_list):
     """Проверка входящих данных на корректность"""
-    hh_valid_vacancies = []
+    sj_valid_vacancies = []
     for vacancies in sj_vac_source_list:
         if isinstance(vacancies["profession"], str):
             vacancy_name = vacancies["profession"]
@@ -80,8 +80,8 @@ def sj_vac_info_validation(sj_vac_source_list):
 
         if (vacancy_name and url and salary_from and salary_currency and salary_to
                 and employer_name and requirement):
-            hh_valid_vacancies.append(vacancies)
-    return hh_valid_vacancies
+            sj_valid_vacancies.append(vacancies)
+    return sj_valid_vacancies
 
 
 def sj_data_formatting(sj_vac_valid_list):
