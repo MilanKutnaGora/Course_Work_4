@@ -18,7 +18,6 @@ class SJApiEngine(ApiEngine):
 
     def get_vacancies(self):
         """Получение всех вакансий выбранного города"""
-        global vacancies
         sj_vac_url = self.sj_api_url + "/vacancies"
         params = {
             "town": self.city_name,
@@ -30,7 +29,7 @@ class SJApiEngine(ApiEngine):
         if response.status_code == 200:
             vacancies = response.json()
 
-            return vacancies["objects"]
+        return vacancies["objects"]
 
 
 def sj_vac_info_validation(sj_vac_source_list):

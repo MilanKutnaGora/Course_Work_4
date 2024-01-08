@@ -31,5 +31,5 @@ class JsonOperator(JsonManager):
                             if item["Зарплата от"] == salary]
         if len(chosen_vacancies) > 0:
             return chosen_vacancies
-        return "Упс. Кажется не нашлось ни одной вакансии с указанной зарплатой"
+        return "Нет вакансии с указанной зарплатой"
 
