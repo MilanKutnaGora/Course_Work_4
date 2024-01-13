@@ -14,7 +14,7 @@ class UserInterface:
         """Выбор функции"""
         function_input = input(f"Доступны следующие действия:\n"
                                f"1 - Вывести весь список вакансий (не более 100)\n"
-                               f"2 - Вывести топ N вакансий (по убыванию)\n"
+                               f"2 - Вывести топ вакансии по убыванию\n"
                                f"3 - Отфильтровать список по зарплате "
                                f"(указывается минимальная ЗП)\n"
                                f"4 - Найти вакансию по ключевому слову\n"
@@ -38,7 +38,7 @@ class UserInterface:
                     for item in all_vac:
                         print(item)
 
-                # Вывод топ N вакансий
+                # Вывод топ вакансий
                 if chosen_func == "2":
                     n_input = int(input(f"Введите желаемое количество вакансий для "
                                         f"обработки:\n> "))
@@ -54,7 +54,7 @@ class UserInterface:
                     min_sal_list = output_formatting(all_vac_inst_3.get_vac_by_min_salary
                                                      (min_sal_input))
                     if len(min_sal_list) == 0:
-                        print(f"Кажется у Вас слишком высокие требования :)\n"
+                        print(f"У Вас слишком высокие требования к ЗП :)\n"
                               f"Таких вакансий не нашлось.\n")
                     else:
                         for item in min_sal_list:
@@ -116,11 +116,11 @@ class UserInterface:
                     print()
 
         else:
-            print("Упс. Кажется не нашлось ни одной вакансии с полными данными.")
+            print("К сожалению не нашлось ни одной вакансии с полными данными.")
 
 
 def output_formatting(hh_vac_valid_list):
-    """Метод для преобразования json формата в читабельный формат"""
+    """Метод для преобразования json формата в финальный"""
     hh_formed_vac = []
     counter = 1
     for vacancy in hh_vac_valid_list:
